@@ -1,0 +1,15 @@
+.card {
+  display: flex;
+  flex-direction: row;
+  width: 700px;
+  height: 400px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+  margin: 20px;
+}
+
+.card:hover {
+  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.2);
+}

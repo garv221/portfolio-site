@@ -1,0 +1,59 @@
+.navigationBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: white;
+}
+
+.authorName {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+  width: 50%;
+  gap: 10px;
+  align-items: center;
+}
+
+.authorIcon {
+  background-color: blue;
+  width: 16px;
+  height: 16px;
+  margin-left: 20px;
+}
+
+.authorText {
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.authorRole {
+  font-size: 17px;
+  font-weight: 350;
+  color: #2e2e2e;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+  width: 50%;
+  gap: 20px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.link {
+  color: black;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.activeLink {
+  color: blue;
+  text-decoration: none;
+}
