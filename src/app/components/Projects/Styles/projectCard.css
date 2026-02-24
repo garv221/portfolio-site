@@ -1,0 +1,214 @@
+/* ========== Page-level styles ========== */
+.projects-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.projects-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  background-color: var(--accent-bg);
+  padding-top: 250px;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.projects-inner {
+  display: flex;
+  flex-direction: column;
+  width: 745px;
+  max-width: 90%;
+}
+
+.projects-heading-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.projects-heading-icon {
+  background-color: var(--accent-blue);
+  width: 20px;
+  height: 20px;
+  margin-top: 5px;
+  margin-right: 5px;
+  flex-shrink: 0;
+  transition: background-color 0.3s ease;
+}
+
+.projects-heading-text {
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+/* ========== Project Card ========== */
+.projectCard {
+  display: flex;
+  flex-direction: row;
+  height: 400px;
+  background-color: var(--card-bg);
+  box-shadow: 6px 6px 6px var(--shadow);
+  transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+  margin: 60px 20px;
+  overflow: hidden;
+}
+
+.projectCard:hover {
+  box-shadow: 0 12px 30px var(--shadow-strong);
+  transform: translateY(-6px);
+}
+
+.projectCard-image {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.projectCard:hover .projectCard-image {
+  transform: scale(1.05);
+}
+
+.projectCard-name {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--accent-blue);
+  transition: letter-spacing 0.3s ease, color 0.3s ease;
+}
+
+.projectCard:hover .projectCard-name {
+  letter-spacing: 1px;
+}
+
+.projectCard-content {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.projectCard-header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.projectCard-accent {
+  background-color: var(--accent-blue);
+  width: 10px;
+  height: 50px;
+  margin-right: 20px;
+  flex-shrink: 0;
+  transition: background-color 0.3s ease;
+}
+
+.projectCard-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+.projectCard-name {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--accent-blue);
+}
+
+.projectCard-role {
+  font-size: 15px;
+  font-weight: 350;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.projectCard-description {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+  margin-top: 50px;
+  margin-right: 10px;
+  font-size: 15px;
+  color: var(--text-primary);
+  font-weight: 300;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.projectCard-image {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ========== Tablet & Mobile (≤768px) ========== */
+@media (max-width: 768px) {
+  .projects-section {
+    padding-top: 120px;
+  }
+
+  .projects-inner {
+    width: 90%;
+  }
+
+  .projects-heading-text {
+    font-size: 28px;
+  }
+
+  .projectCard {
+    flex-direction: column;
+    height: auto;
+    margin: 30px 10px;
+    background-color: var(--card-bg);
+  }
+
+  .projectCard-content {
+    width: 100%;
+  }
+
+  .projectCard-image {
+    width: 100%;
+    height: 200px;
+    order: -1;
+  }
+
+  .projectCard-header {
+    margin-top: 20px;
+  }
+
+  .projectCard-description {
+    margin: 20px 15px;
+  }
+}
+
+/* ========== Small phones (≤480px) ========== */
+@media (max-width: 480px) {
+  .projects-section {
+    padding-top: 90px;
+  }
+
+  .projects-heading-text {
+    font-size: 24px;
+  }
+
+  .projectCard-name {
+    font-size: 17px;
+  }
+
+  .projectCard-description {
+    font-size: 14px;
+  }
+
+  .projectCard-image {
+    height: 160px;
+  }
+}

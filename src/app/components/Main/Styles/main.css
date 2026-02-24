@@ -1,0 +1,48 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease;
+}
+
+.main-content {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  height: 100vh;
+  position: relative;
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease;
+}
+
+.left-pane {
+  display: flex;
+  background-color: var(--accent-bg);
+  width: 40%;
+  transition: background-color 0.3s ease;
+}
+
+.right-pane {
+  display: flex;
+  background-color: var(--bg-color);
+  width: 60%;
+  transition: background-color 0.3s ease;
+}
+
+/* ========== Tablet & Mobile (≤768px) ========== */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .left-pane {
+    display: none;
+  }
+
+  .right-pane {
+    display: none;
+  }
+}

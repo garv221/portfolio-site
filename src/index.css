@@ -1,5 +1,42 @@
+:root {
+  /* Light Theme (Default) */
+  --bg-color: #ffffff;
+  --secondary-bg: #f4f4f4;
+  --accent-bg: #f3ece7;
+  --text-primary: #2e2e2e;
+  --text-secondary: #000000;
+  --card-bg: #ffffff;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --shadow: rgba(0, 0, 0, 0.1);
+  --shadow-strong: rgba(0, 0, 0, 0.2);
+  --accent-blue: #0050ff;
+  --accent-blue-hover: #003ecf;
+  --link-color: #2e2e2e;
+}
+
+[data-theme='dark'] {
+  /* Dark Theme (Grayscale) */
+  --bg-color: #121212;
+  --secondary-bg: #615f5f;
+  --accent-bg: #444444;
+  --text-primary: #b4aeae;
+  --text-secondary: #B0B0B0;
+  --card-bg: #121212;
+  --border-color: #444444;
+  --shadow: rgba(0, 0, 0, 0.5);
+  --shadow-strong: rgba(0, 0, 0, 0.7);
+  --accent-blue: #888888;
+  --accent-blue-hover: #B0B0B0;
+  --link-color: #E0E0E0;
+  --icon-filter: invert(1) brightness(2);
+  --accent-blue-shadow: rgba(136, 136, 136, 0.4);
+}
+
 body {
   margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
