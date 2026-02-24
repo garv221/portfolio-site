@@ -1,0 +1,108 @@
+/* Pull Light Switch Styles */
+@keyframes wave {
+    0% {
+        transform: rotate(-6deg);
+    }
+
+    50% {
+        transform: rotate(6deg);
+    }
+
+    100% {
+        transform: rotate(-6deg);
+    }
+}
+
+.pull-cord-container {
+    position: absolute;
+    top: 0;
+    right: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: grab;
+    z-index: 10000;
+    --cord-base-height: 120px;
+    /* Origin at the top so it swings from the ceiling */
+    transform-origin: top center;
+    /* Waving animation when not being dragged (slightly faster) */
+    animation: wave 3.5s ease-in-out infinite;
+    /* Transition handles snap back when not dragging */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.pull-cord-container.dragging {
+    /* Remove transition/animation while dragging */
+    transition: none;
+    animation: none;
+    cursor: grabbing;
+}
+
+.pull-cord {
+    width: 4px;
+    height: calc(var(--cord-base-height) + var(--drag-offset, 0px));
+    background-color: var(--text-primary);
+    border-radius: 0 0 2px 2px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    /* Springy bounce effect on release - increased tension */
+    transition: height 0.6s cubic-bezier(0.5, 3.5, 0.4, 0.5);
+}
+
+.pull-handle {
+    width: 20px;
+    height: 30px;
+    background-color: var(--accent-blue);
+    border-radius: 10px;
+    margin-top: -4px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+    border: 3px solid var(--text-primary);
+    transition: background-color 0.3s ease;
+}
+
+.pull-cord-container:hover .pull-handle {
+    background-color: var(--accent-blue-hover);
+}
+
+.pull-cord-tooltip {
+    position: absolute;
+    top: 50px;
+    right: 15px;
+    width: 140px;
+    background-color: var(--text-primary);
+    color: var(--bg-color);
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.4s ease, visibility 0.4s ease, right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.pull-cord-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -6px;
+    transform: translateY(-50%);
+    border-width: 6px 0 6px 6px;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--text-primary);
+}
+
+.pull-cord-tooltip.visible {
+    opacity: 1;
+    visibility: visible;
+    right: 25px;
+    /* Slides in slightly */
+}
+
+@media (max-width: 768px) {
+    .pull-cord-container {
+        right: 20px;
+        --cord-base-height: 80px;
+    }
+}

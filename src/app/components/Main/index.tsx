@@ -1,8 +1,13 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+
 import About from "./about";
 import "./Styles/main.css";
 
-const Main = () => {
+interface MainProps {
+  spotlightMode: boolean;
+  toggleSpotlightMode: () => void;
+}
+
+const Main: React.FC<MainProps> = ({ spotlightMode, toggleSpotlightMode }) => {
   return (
     <div className="main-container">
       <div className="main-content">

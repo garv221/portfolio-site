@@ -1,5 +1,5 @@
 import facebookIcon from "../../assets/facebook.svg";
-import twitterIcon from "../../assets/twitter.svg";
+import twitterIcon from "../../assets/twitter-x.svg";
 import linkedinIcon from "../../assets/linkedin.svg";
 import instagramIcon from "../../assets/instagram.svg";
 import "./Styles/footer.css";
@@ -29,7 +29,7 @@ const Footer = () => {
           <p className="contact-info-title">Follow</p>
           <div className="social-media">
             <img src={facebookIcon} alt="facebook" className="facebook-icon" />
-            <img src={twitterIcon} alt="twitter" className="twitter-icon" />
+            <img src={twitterIcon} alt="twitter-x" className="twitter-icon" />
             <img src={linkedinIcon} alt="linkedin" className="linkedin-icon" />
             <img
               src={instagramIcon}

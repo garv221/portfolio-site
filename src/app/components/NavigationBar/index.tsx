@@ -1,32 +1,21 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import "./Styles/NavigationBar.css";
 
-interface NavigationBarProps {
-  theme: string;
-  toggleTheme: () => void;
-}
-
-const NavigationBar: React.FC<NavigationBarProps> = ({ theme, toggleTheme }) => {
+const NavigationBar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+  const isMainPage = location.pathname === "/";
 
   return (
-    <div className="navigationBar">
-      <div className="authorName">
+    <div className={`navigationBar ${isMainPage ? "main-page-nav" : ""}`}>
+      <div className="authorName" style={{ visibility: isMainPage ? 'hidden' : 'visible' }}>
         <p className="authorIcon"></p>
         <p className="authorText">Garv Kumar</p>
         <p className="authorRole"> / SOFTWARE DEVELOPER</p>
       </div>
 
       <div className="nav-controls">
-        <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle Night Mode">
-          {theme === "light" ? (
-            <span className="toggle-icon">🌙</span>
-          ) : (
-            <span className="toggle-icon">☀️</span>
-          )}
-        </button>
-
         <button
           className={`hamburger ${menuOpen ? "open" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}

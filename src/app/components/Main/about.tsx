@@ -1,5 +1,5 @@
 import facebookIcon from "../../assets/facebook.svg";
-import twitterIcon from "../../assets/twitter.svg";
+import twitterIcon from "../../assets/twitter-x.svg";
 import linkedinIcon from "../../assets/linkedin.svg";
 import instagramIcon from "../../assets/instagram.svg";
 import profileIcon from "../../assets/profile.svg";
@@ -28,7 +28,7 @@ const About = () => {
           />
           <img
             src={twitterIcon}
-            alt="twitter"
+            alt="twitter-x"
             className="social-icon twitter-icon"
           />
           <img
