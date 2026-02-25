@@ -21,26 +21,50 @@ const About = () => {
           <div className="title">SOFTWARE DEVELOPER</div>
         </div>
         <div className="social-container">
-          <img
-            src={facebookIcon}
-            alt="facebook"
-            className="social-icon facebook-icon"
-          />
-          <img
-            src={twitterIcon}
-            alt="twitter-x"
-            className="social-icon twitter-icon"
-          />
-          <img
-            src={linkedinIcon}
-            alt="linkedin"
-            className="social-icon linkedin-icon"
-          />
-          <img
-            src={instagramIcon}
-            alt="instagram"
-            className="social-icon instagram-icon"
-          />
+          <a
+            href="https://www.facebook.com/people/Garv-Kumar/pfbid0Vg1aJKaUADEKdogvtF48qmSeYtn45xQNYB5nir1bJeSkh8MJyBjKDtgNNJJf5USol/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src={facebookIcon}
+              alt="facebook"
+              className="social-icon facebook-icon"
+            />
+          </a>
+          <a
+            href="https://x.com/im_garvk"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src={twitterIcon}
+              alt="twitter-x"
+              className="social-icon twitter-icon"
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/garv-kumar/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src={linkedinIcon}
+              alt="linkedin"
+              className="social-icon linkedin-icon"
+            />
+          </a>
+          <a
+            href="https://www.instagram.com/im_garvk/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src={instagramIcon}
+              alt="instagram"
+              className="social-icon instagram-icon"
+            />
+          </a>
         </div>
       </div>
 

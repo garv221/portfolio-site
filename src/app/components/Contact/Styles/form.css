@@ -169,6 +169,19 @@ textarea:hover {
   margin: 30px 50px;
 }
 
+.form-status {
+  margin: 0 50px 30px 50px;
+  font-size: 0.9rem;
+}
+
+.form-status.success {
+  color: #0f7b26;
+}
+
+.form-status.error {
+  color: #a10e0e;
+}
+
 /* ========== Tablet & Mobile (≤768px) ========== */
 @media (max-width: 768px) {
   .contact-section {

@@ -9,7 +9,7 @@ const Footer = () => {
     <div className="footer">
       <div className="copy-right">
         <p className="copy-right-text">
-          © 2024 by Garv Kumar.
+          © 2026 by Garv Kumar.
           <br />
           Copyright Reserved.
         </p>
@@ -17,25 +17,49 @@ const Footer = () => {
       <div className="contact-info">
         <div className="contact-info-column">
           <p className="contact-info-title">Call</p>
-          <p className="contact-info-detail">123-456-7890</p>
+          <p className="contact-info-detail">+91-8920923650</p>
         </div>
 
         <div className="contact-info-column">
           <p className="contact-info-title">Write</p>
-          <p className="contact-info-detail">info@mysite.com</p>
+          <p className="contact-info-detail">garv18chauhan@gmail.com</p>
         </div>
 
         <div className="contact-info-column">
           <p className="contact-info-title">Follow</p>
           <div className="social-media">
-            <img src={facebookIcon} alt="facebook" className="facebook-icon" />
-            <img src={twitterIcon} alt="twitter-x" className="twitter-icon" />
-            <img src={linkedinIcon} alt="linkedin" className="linkedin-icon" />
-            <img
-              src={instagramIcon}
-              alt="instagram"
-              className="instagram-icon"
-            />
+            <a
+              href="https://www.facebook.com/people/Garv-Kumar/pfbid0Vg1aJKaUADEKdogvtF48qmSeYtn45xQNYB5nir1bJeSkh8MJyBjKDtgNNJJf5USol/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={facebookIcon} alt="facebook" className="facebook-icon" />
+            </a>
+            <a
+              href="https://x.com/im_garvk"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={twitterIcon} alt="twitter-x" className="twitter-icon" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/garv-kumar/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={linkedinIcon} alt="linkedin" className="linkedin-icon" />
+            </a>
+            <a
+              href="https://www.instagram.com/im_garvk/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={instagramIcon}
+                alt="instagram"
+                className="instagram-icon"
+              />
+            </a>
           </div>
         </div>
       </div>

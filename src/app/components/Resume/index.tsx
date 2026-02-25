@@ -15,7 +15,7 @@ const Resume = () => {
 
           <div className="resume-subheading-row">
             <div className="resume-subheading-text">Experience</div>
-            <button className="download-cv-button">DOWNLOAD CV</button>
+            <button className="download-cv-button">DOWNLOAD</button>
           </div>
 
           {sample_experience.map((experience) => (
