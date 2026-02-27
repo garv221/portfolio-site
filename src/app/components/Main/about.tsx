@@ -2,7 +2,7 @@ import facebookIcon from "../../assets/facebook.svg";
 import twitterIcon from "../../assets/twitter-x.svg";
 import linkedinIcon from "../../assets/linkedin.svg";
 import instagramIcon from "../../assets/instagram.svg";
-import profileIcon from "../../assets/profile.svg";
+import profileIcon from "../../assets/lightX.png";
 import "./Styles/about.css";
 
 const About = () => {
