@@ -90,10 +90,10 @@ const About = () => {
           </button>
         </div>
         <div className="description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut
-          lacinia turpis. Sed lacinia, ligula et facilisis tincidunt, ex dui
-          semper dui, id mollis mauris enim nec orci. Etiam vulputate augue sit
-          amet bibendum interdum.
+          I&apos;m a software developer focused on building reliable backend systems,
+          APIs and data pipelines that power real products. I currently work on
+          high-scale lending integrations at Yubi, using Java, Spring Boot, Kafka,
+          gRPC and Temporal to ship resilient services.
         </div>
       </div>
     </div>

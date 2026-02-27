@@ -1,6 +1,8 @@
-import { sample_experience } from "../../constants/experience";
+import { experience, education } from "../../constants/experience";
 import Card from "./card";
-import SkillCard from "./skillCard";
+import EducationCard from "./educationCard";
+import TechStrip from "./techStrip";
+import resumePdf from "../../assets/Garv_s_Resume.pdf";
 import "./Styles/card.css";
 
 const Resume = () => {
@@ -15,28 +17,44 @@ const Resume = () => {
 
           <div className="resume-subheading-row">
             <div className="resume-subheading-text">Experience</div>
-            <button className="download-cv-button">DOWNLOAD</button>
+            <a
+              href={resumePdf}
+              download="Garv_Kumar_Resume.pdf"
+              className="download-cv-link"
+            >
+              <button className="download-cv-button" type="button">
+                DOWNLOAD
+              </button>
+            </a>
           </div>
 
-          {sample_experience.map((experience) => (
-            <div className="resume-card-wrapper">
-              <Card experience={experience} />
+          {experience.map((experienceItem) => (
+            <div key={`${experienceItem.title}-${experienceItem.start_year}`} className="resume-card-wrapper">
+              <Card experience={experienceItem} />
               <br />
             </div>
           ))}
 
           <div className="resume-subheading-row" style={{ marginTop: "60px" }}>
+            <div className="resume-subheading-text">Technologies I've Worked With</div>
+          </div>
+
+          <TechStrip />
+
+          <div className="resume-subheading-row" style={{ marginTop: "60px" }}>
             <div className="resume-subheading-text">Education</div>
           </div>
 
-          {sample_experience.map((experience) => (
-            <div className="resume-card-wrapper">
-              <Card experience={experience} />
+          {education.map((educationItem) => (
+            <div
+              key={`${educationItem.school}-${educationItem.start_year}`}
+              className="resume-card-wrapper"
+            >
+              <EducationCard education={educationItem} />
               <br />
             </div>
           ))}
 
-          <SkillCard />
         </div>
       </div>
     </div>

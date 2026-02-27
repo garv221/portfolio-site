@@ -84,6 +84,10 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
+.download-cv-link {
+  text-decoration: none;
+}
+
 .download-cv-button:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 20px var(--accent-blue-shadow, rgba(0, 80, 255, 0.4));
@@ -96,6 +100,68 @@
   width: 100%;
   justify-content: center;
   align-items: center;
+}
+
+/* ========== Tech strip ========== */
+.tech-strip-section {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tech-strip-outer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.tech-strip-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 32px;
+  padding: 14px 32px;
+  animation: tech-strip-scroll 15s linear infinite;
+  will-change: transform;
+}
+
+.tech-pill {
+  padding: 6px;
+  border-radius: 10%;
+  border: none;
+  background-color: var(--card-bg);
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow: 0 4px 10px var(--shadow);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tech-pill-icon {
+  height: 50px;
+  width: 50px;
+  display: block;
+}
+
+.tech-pill-label {
+  display: inline-block;
+}
+
+@keyframes tech-strip-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* ========== Card styles ========== */
@@ -119,7 +185,7 @@
 .card-left {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 48%;
   padding-top: 95px;
   padding-left: 55px;
   gap: 10px;
@@ -147,10 +213,32 @@
   transition: color 0.3s ease;
 }
 
+.card-company-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-company-logo {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  border-radius: 999px;
+}
+
 .card-location {
   font-size: 13px;
   font-weight: 500;
   color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.card-subtitle {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-primary);
+  opacity: 0.9;
+  margin-top: 4px;
   transition: color 0.3s ease;
 }
 
@@ -165,6 +253,71 @@
   justify-content: center;
   box-sizing: border-box;
   transition: color 0.3s ease;
+}
+
+.card-description-list {
+  margin: 0;
+  padding-left: 20px;
+  list-style-type: disc;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-description-list li {
+  line-height: 1.5;
+}
+
+/* ========== Education card specific styles ========== */
+.education-card {
+  height: 250px;
+  width: 720px;
+}
+
+.education-card .card-left {
+  padding-top: 0;
+  justify-content: center;
+}
+
+.education-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+}
+
+.education-card-image-wrapper {
+  width: 60%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.education-card-description {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .education-card {
+    flex-direction: column;
+  }
+
+  .education-card-image-wrapper {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .education-card-image-wrapper {
+    padding-top: 10px;
+  }
 }
 
 /* ========== Tablet & Mobile (≤768px) ========== */
