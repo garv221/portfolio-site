@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import './PullCord.css';
 
 interface PullCordProps {
@@ -69,27 +69,25 @@ const PullCord: React.FC<PullCordProps> = ({ onToggle, isActive }) => {
         startY.current = e.clientY;
     };
 
-    const handlePointerMove = (e: PointerEvent) => {
-        if (!isDragging) return;
+    const handlePointerMove = useCallback((e: PointerEvent) => {
         const deltaY = e.clientY - startY.current;
         if (deltaY > 0 && deltaY < maxDrag) {
             setDragOffset(deltaY);
         } else if (deltaY >= maxDrag) {
             setDragOffset(maxDrag);
         }
-    };
+    }, [maxDrag]);
 
-    const handlePointerUp = (e: PointerEvent) => {
-        if (!isDragging) return;
+    const handlePointerUp = useCallback((e: PointerEvent) => {
         setIsDragging(false);
-        if (dragOffset > triggerPoint) {
-            onToggle();
-        }
-        // Snap back
-        setDragOffset(0);
-    };
+        setDragOffset((currentOffset) => {
+            if (currentOffset > triggerPoint) {
+                onToggle();
+            }
+            return 0;
+        });
+    }, [onToggle, triggerPoint]);
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         if (isDragging) {
             window.addEventListener('pointermove', handlePointerMove);
@@ -103,7 +101,7 @@ const PullCord: React.FC<PullCordProps> = ({ onToggle, isActive }) => {
             window.removeEventListener('pointermove', handlePointerMove);
             window.removeEventListener('pointerup', handlePointerUp);
         };
-    }, [isDragging, dragOffset]);
+    }, [isDragging, handlePointerMove, handlePointerUp]);
 
     return (
         <div
