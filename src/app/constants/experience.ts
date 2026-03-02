@@ -39,6 +39,7 @@ export const education = [
     start_year: "2019",
     end_year: "2023",
     location: "Delhi, India",
+    cgpa: "8.759/10.00",
     description:
       "",
     image: iitDelhiImg,
@@ -50,6 +51,7 @@ export const education = [
     start_year: "2017",
     end_year: "2018",
     location: "Delhi, India",
+    cgpa: "96.4%",
     description:
       "",
     image: bmvbImg,

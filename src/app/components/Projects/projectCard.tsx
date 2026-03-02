@@ -2,29 +2,59 @@ import React from "react";
 import "./Styles/projectCard.css";
 import projectIcon from "../../assets/project.png";
 
-const ProjectCard = () => {
+interface Project {
+  title: string;
+  start_date: string;
+  end_date: string;
+  technologies_used: string[];
+  description: string;
+  github_link?: string;
+  image?: string;
+}
+
+interface ProjectCardProps {
+  project: Project;
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
     <div className="projectCard">
       <div className="projectCard-content">
         <div className="projectCard-header">
           <div className="projectCard-accent"></div>
           <div className="projectCard-info">
-            <div className="projectCard-name">Project name 01</div>
-            <div className="projectCard-role">Role Title</div>
+            <div className="projectCard-name">{project.title}</div>
+            <div className="projectCard-date">
+              {project.start_date} – {project.end_date}
+            </div>
           </div>
         </div>
 
-        <p className="projectCard-description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut
-          lacinia turpis. Sed lacinia, ligula et facilisis tincidunt, ex dui
-          semper dui, id mollis mauris enim nec orci. Etiam vulputate augue sit
-          amet bibendum interdum. Vivamus faucibus ultrices vestibulum.
-        </p>
+        <div className="projectCard-technologies">
+          {project.technologies_used.map((tech, index) => (
+            <span key={index} className="projectCard-tech-tag">
+              {tech}
+            </span>
+          ))}
+        </div>
+
+        <p className="projectCard-description">{project.description}</p>
+
+        {project.github_link && (
+          <a
+            href={project.github_link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="projectCard-github-link"
+          >
+            View on GitHub →
+          </a>
+        )}
       </div>
 
       <img
-        src={projectIcon}
-        alt="project"
+        src={project.image || projectIcon}
+        alt={project.title}
         className="projectCard-image"
       />
     </div>

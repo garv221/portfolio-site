@@ -7,6 +7,7 @@ type Education = {
   location?: string;
   start_year?: string;
   end_year?: string;
+  cgpa?: string;
   description?: string;
   image?: string;
 };
@@ -29,6 +30,9 @@ const EducationCard = ({ education }: EducationCardProps) => {
         )}
         {education.major && (
           <div className="card-subtitle">{education.major}</div>
+        )}
+        {education.cgpa && (
+          <div className="card-cgpa">CGPA: {education.cgpa}</div>
         )}
         {education.description && (
           <div className="education-card-description">

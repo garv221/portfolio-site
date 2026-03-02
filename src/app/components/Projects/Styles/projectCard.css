@@ -124,24 +124,64 @@
   color: var(--accent-blue);
 }
 
-.projectCard-role {
-  font-size: 15px;
-  font-weight: 350;
-  color: var(--text-primary);
+.projectCard-date {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-secondary);
   transition: color 0.3s ease;
+}
+
+.projectCard-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-left: 30px;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+.projectCard-tech-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  background-color: var(--accent-blue);
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.projectCard:hover .projectCard-tech-tag {
+  transform: translateY(-2px);
 }
 
 .projectCard-description {
   display: flex;
   flex-direction: column;
   margin-left: 30px;
-  margin-top: 50px;
+  margin-top: 20px;
   margin-right: 10px;
   font-size: 15px;
   color: var(--text-primary);
   font-weight: 300;
   line-height: 1.4;
   transition: color 0.3s ease;
+}
+
+.projectCard-github-link {
+  display: inline-block;
+  margin-left: 30px;
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent-blue);
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.projectCard-github-link:hover {
+  transform: translateX(5px);
+  text-decoration: underline;
 }
 
 .projectCard-image {
