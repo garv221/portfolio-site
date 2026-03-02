@@ -272,6 +272,7 @@
 .education-card {
   height: 250px;
   width: 720px;
+  max-width: 100%;
 }
 
 .education-card .card-left {
@@ -311,21 +312,6 @@
   font-size: 14px;
   font-weight: 300;
   color: var(--text-primary);
-}
-
-@media (max-width: 768px) {
-  .education-card {
-    flex-direction: column;
-  }
-
-  .education-card-image-wrapper {
-    width: 100%;
-    padding: 20px;
-  }
-
-  .education-card-image-wrapper {
-    padding-top: 10px;
-  }
 }
 
 /* ========== Tablet & Mobile (≤768px) ========== */
@@ -370,6 +356,30 @@
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
+
+  /* Education card mobile styles */
+  .education-card {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .education-card .card-left {
+    width: 100%;
+    padding: 25px 20px 15px 20px;
+  }
+
+  .education-card-image-wrapper {
+    width: 100%;
+    height: 200px;
+    padding: 20px;
+    order: -1;
+  }
+
+  .education-card-image {
+    border-radius: 8px;
+  }
 }
 
 /* ========== Small phones (≤480px) ========== */
@@ -399,5 +409,27 @@
   .card-right {
     font-size: 14px;
     margin: 15px;
+  }
+
+  /* Education card small phone styles */
+  .education-card {
+    margin: 10px 5px;
+  }
+
+  .education-card .card-left {
+    padding: 20px 15px 10px 15px;
+  }
+
+  .education-card-image-wrapper {
+    height: 160px;
+    padding: 15px;
+  }
+
+  .card-cgpa {
+    font-size: 13px;
+  }
+
+  .education-card-description {
+    font-size: 13px;
   }
 }
